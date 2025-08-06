@@ -25,18 +25,31 @@ export default [
       parserOptions: {
         project: "./tsconfig.json",
       },
+      globals: {
+        document: "readonly",
+        window: "readonly",
+        localStorage: "readonly",
+        JSX: "readonly",
+      },
     },
     plugins: {
       "@typescript-eslint": tseslint,
     },
     rules: {
-      // Your custom rules here
+      "no-undef": "off",
+      "no-unused-vars": [
+        "warn",
+        { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }
+      ],
     },
   },
   {
     languageOptions: {
       globals: {
         document: "readonly",
+        window: "readonly",
+        localStorage: "readonly",
+        JSX: "readonly",
       },
     },
   },
